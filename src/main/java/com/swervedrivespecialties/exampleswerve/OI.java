@@ -4,16 +4,22 @@ import com.swervedrivespecialties.exampleswerve.subsystems.DrivetrainSubsystem;
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.JoystickButton;
 import edu.wpi.first.wpilibj.command.InstantCommand;
+import com.swervedrivespecialties.libs.*;
 
 public class OI {
     /*
        Add your joysticks and buttons here
      */
     private Joystick primaryJoystick = new Joystick(0);
+    public XboxController driver;
+    public XboxController operator;
 
     public OI() {
+
+        driver = new XboxController(0);
+        operator = new XboxController(2);
         // Back button zeroes the drivetrain
-        new JoystickButton(primaryJoystick, 7).whenPressed(
+        new JoystickButton(primaryJoystick, 0).whenPressed(
                 new InstantCommand(() -> DrivetrainSubsystem.getInstance().resetGyroscope())
         );
     }
