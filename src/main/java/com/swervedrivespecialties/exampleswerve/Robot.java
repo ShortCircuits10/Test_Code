@@ -7,7 +7,8 @@ import edu.wpi.first.wpilibj.command.Scheduler;
 public class Robot extends TimedRobot {
     private static OI oi;
 
-    private static DrivetrainSubsystem drivetrain;
+    //Was originally public
+    public static DrivetrainSubsystem drivetrain;
 
     public static OI getOi() {
         return oi;
