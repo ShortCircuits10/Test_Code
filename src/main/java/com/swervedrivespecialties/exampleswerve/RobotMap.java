@@ -1,5 +1,6 @@
 package com.swervedrivespecialties.exampleswerve;
 
+
 public class RobotMap {
     public static final int DRIVETRAIN_FRONT_LEFT_ANGLE_MOTOR = 2; // CAN
     public static final int DRIVETRAIN_FRONT_LEFT_ANGLE_ENCODER = 0; // Analog
@@ -16,4 +17,15 @@ public class RobotMap {
     public static final int DRIVETRAIN_BACK_RIGHT_ANGLE_MOTOR = 8; // CAN
     public static final int DRIVETRAIN_BACK_RIGHT_ANGLE_ENCODER = 3; // Analog
     public static final int DRIVETRAIN_BACK_RIGHT_DRIVE_MOTOR = 7; // CAN
+
+    // Intake
+    public static int INTAKE_MOTOR = 6;
+    // Belt
+    public static int INTAKE_MOTOR2 = 7;
+    // Wheel
+    public static int INTAKE_MOTOR3 = 8;
+
+
+
+
 }
