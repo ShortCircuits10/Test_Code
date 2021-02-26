@@ -8,6 +8,9 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import com.swervedrivespecialties.libs.XboxController;
 import com.swervedrivespecialties.exampleswerve.Intake.commands.*;
+import com.swervedrivespecialties.exampleswerve.Shooter.commands.Shooter;
+import com.swervedrivespecialties.exampleswerve.Shooter.commands.ReverseShooter;
+import com.swervedrivespecialties.exampleswerve.Shooter.commands.DisableShooter;
 
 
 public class OI {
@@ -22,6 +25,15 @@ public class OI {
 
         driver = new XboxController(0);
         operator = new XboxController(2);
+
+
+
+        // Shooter
+        operator.A.whenPressed(new Shooter());
+        operator.B.whenPressed(new ReverseShooter());
+        operator.X.whenPressed(new DisableShooter());
+
+
         // Back button zeroes the drivetrain
         new JoystickButton(primaryJoystick, 0).whenPressed(
                 new InstantCommand(() -> DrivetrainSubsystem.getInstance().resetGyroscope())
@@ -31,8 +43,13 @@ public class OI {
     public Joystick getPrimaryJoystick() {
         return primaryJoystick;
     }
+
+    // Shooter code
+  
     
 
+
+    //Intake code
 
 {
     new Trigger() {

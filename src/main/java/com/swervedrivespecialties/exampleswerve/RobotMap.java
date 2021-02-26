@@ -19,11 +19,15 @@ public class RobotMap {
     public static final int DRIVETRAIN_BACK_RIGHT_DRIVE_MOTOR = 7; // CAN
 
     // Intake
-    public static int INTAKE_MOTOR = 6;
+    public static int INTAKE_MOTOR = 14;
     // Belt
-    public static int INTAKE_MOTOR2 = 7;
+    public static int INTAKE_MOTOR2 = 12;
     // Wheel
-    public static int INTAKE_MOTOR3 = 8;
+    public static int INTAKE_MOTOR3 = 23;
+
+
+    public static int SHOOTER_MOTOR1 = 15;
+    public static int SHOOTER_MOTOR2 = 9;
 
 
 
