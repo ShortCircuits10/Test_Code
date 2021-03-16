@@ -26,8 +26,8 @@ public class RobotMap {
     public static int INTAKE_MOTOR3 = 23;
 
 
-    public static int SHOOTER_MOTOR1 = 15;
-    public static int SHOOTER_MOTOR2 = 9;
+    public static int SHOOTER_MOTOR1 = 16;
+    public static int SHOOTER_MOTOR2 = 10;
 
 
 

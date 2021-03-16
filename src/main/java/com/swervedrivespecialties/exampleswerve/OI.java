@@ -7,9 +7,12 @@ import edu.wpi.first.wpilibj.command.InstantCommand;
 //import com.swervedrivespecialties.libs.*;
 import edu.wpi.first.wpilibj2.command.button.Trigger;
 import com.swervedrivespecialties.libs.XboxController;
-import com.swervedrivespecialties.exampleswerve.Intake.commands.*;
+
+import com.swervedrivespecialties.exampleswerve.Intake.commands.TeleOpIntake;
+import com.swervedrivespecialties.exampleswerve.Intake.commands.TeleOpBallIntake;
+import com.swervedrivespecialties.exampleswerve.Intake.commands.TeleOpElevator;
+
 import com.swervedrivespecialties.exampleswerve.Shooter.commands.Shooter;
-import com.swervedrivespecialties.exampleswerve.Shooter.commands.ReverseShooter;
 import com.swervedrivespecialties.exampleswerve.Shooter.commands.DisableShooter;
 
 
@@ -24,13 +27,14 @@ public class OI {
     public OI() {
 
         driver = new XboxController(0);
-        operator = new XboxController(2);
+        operator = new XboxController(1);
 
 
 
         // Shooter
         operator.A.whenPressed(new Shooter());
-        operator.B.whenPressed(new ReverseShooter());
+        //operator.B.whenPressed(new ReverseShooter());
+        operator.X.whenPressed(new DisableShooter());
         operator.X.whenPressed(new DisableShooter());
 
 
@@ -64,7 +68,7 @@ public class OI {
         public boolean get() {
           if (Robot.INTAKE == null)
             return false;
-          return (operator.LS.X.get() != 0);
+          return (operator.LS.Y.get() != 0);
         }
       }.whenActive(new TeleOpBallIntake());
   
@@ -72,7 +76,7 @@ public class OI {
         public boolean get() {
           if (Robot.INTAKE == null)
             return false;
-          return (operator.RS.X.get() != 0);
+          return (operator.RS.Y.get() != 0);
         }
       }.whenActive(new TeleOpElevator());
     }
